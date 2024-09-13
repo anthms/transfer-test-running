@@ -1,13 +1,8 @@
 on:
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
   job-name:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: |
-          for run in {1..60}; do
-            echo "Log line: $run"
-            sleep 1
-          done
+      - run: echo 'done in ${{ github.repository }}'
